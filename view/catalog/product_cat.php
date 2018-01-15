@@ -15,7 +15,7 @@ include_once(ROOT . '/view/layouts/header_pro.php');
                              
                                   <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <h4 class="panel-title"><a href="/e-shopper/category/<?php echo $categoryItem['id'];?>" 
+                                        <h4 class="panel-title"><a href="/category/<?php echo $categoryItem['id'];?>"
                                          class="<?php if ($idCategory == $categoryItem['id']) echo 'active'; ?>"
                                            >
                                          <?php echo $categoryItem['name'];?>
@@ -38,14 +38,14 @@ include_once(ROOT . '/view/layouts/header_pro.php');
                                     <div class="single-products">
                                         
                                         <div class="productinfo text-center">
-                                            <a href="/e-shopper/product/<?php echo $product['id'];?>"> 
+                                            <a href="/product/<?php echo $product['id'];?>">
                                                 <img src="../template/images/home/product1.jpg" alt="" />
                                             </a>
                                             <h2><?php echo $product['price'];?></h2>
                                             <p>
-                                                <a href="/e-shopper/product/<?php echo $product['id'];?>"> <?php echo $product['title']; ?></a>
+                                                <a href="/product/<?php echo $product['id'];?>"> <?php echo $product['title']; ?></a>
                                             </p>
-                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
+                                            <a href="/cart/add/<?php echo $product['id'];?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
                                         </div>
                                         <?php if ($product['is_new']): ?>
                                         <img src="../template/images/home/new.png" class="new" alt="" />

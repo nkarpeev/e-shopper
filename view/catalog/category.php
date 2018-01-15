@@ -6,7 +6,7 @@
                              
                                   <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <h4 class="panel-title"><a href="/e-shopper/category/<?php echo $categoryItem['id'];?>" 
+                                        <h4 class="panel-title"><a href="/category/<?php echo $categoryItem['id'];?>"
                                            >
                                          <?php echo $categoryItem['name'];?>
                                                 

@@ -31,11 +31,11 @@
                             } else {
                                 while ($count_page + 1 >= 1) {
                                     echo 'count_page: ' . $count_page;
-                                    echo '<li><a href="/e-shopper/catalog/' . $page . '">' . $page . '</a></li>';
+                                    echo '<li><a href="/catalog/' . $page . '">' . $page . '</a></li>';
                                     $count_page -= 1;
                                     $page++;
                                 }
-                                echo '<li><a href="/e-shopper/catalog/' . $page . '">»</a></li>';
+                                echo '<li><a href="/catalog/' . $page . '">»</a></li>';
                             }
                         */?>
                     </ul>-->

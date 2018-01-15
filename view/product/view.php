@@ -12,7 +12,7 @@
                         <div class="row">
                             <div class="col-sm-5">
                                 <div class="view-product">
-                                    <a href="/e-shopper/product/<?php echo $productItem['id']; ?>">
+                                    <a href="/product/<?php echo $productItem['id']; ?>">
                                         <img src="template/images/home/product1.jpg" alt=""/>
                                     </a>
                                 </div>

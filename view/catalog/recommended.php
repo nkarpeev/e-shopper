@@ -16,11 +16,11 @@
                                         
                                         <div class="single-products">
                                             <div class="productinfo text-center">
-                                                <a href="/e-shopper/product/<?php echo $product['id'];?>"> 
+                                                <a href="/product/<?php echo $product['id'];?>">
                                                 <img src="template/images/home/recommend1.jpg" alt="" />
                                                 </a>
                                                 <h2><?php echo $product['price'];?></h2>
-                                                <p><a href="/e-shopper/product/<?php echo $product['id'];?>"><?php echo $product['title'];?></a></p>
+                                                <p><a href="/product/<?php echo $product['id'];?>"><?php echo $product['title'];?></a></p>
                                                 <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
                                             </div>
 
@@ -39,11 +39,11 @@
                                         
                                         <div class="single-products">
                                             <div class="productinfo text-center">
-                                                <a href="/e-shopper/product/<?php echo $product['id'];?>"> 
+                                                <a href="/product/<?php echo $product['id'];?>">
                                                 <img src="template/images/home/recommend1.jpg" alt="" />
                                                 </a>
                                                 <h2><?php echo $product['price'];?></h2>
-                                                <p><a href="/e-shopper/product/<?php echo $product['id'];?>"><?php echo $product['title'];?></a></p>
+                                                <p><a href="/product/<?php echo $product['id'];?>"><?php echo $product['title'];?></a></p>
                                                 <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
                                             </div>
 

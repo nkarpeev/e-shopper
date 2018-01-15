@@ -14,6 +14,7 @@ return array(
     'user/register'                   => '/user/register',
     'user/login'                      => '/user/login',
     'user/logout'                     => '/user/logout',
+    'cart/add'                        => '/cart/add',
     'cabinet'                         => '/cabinet/index',
     'cabinet/edit'                    => '/cabinet/edit',
     ''                                => '/site/index'

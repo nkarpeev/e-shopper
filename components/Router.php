@@ -39,7 +39,7 @@
                         $internalRoute = preg_replace("~$uriPattern~", $path, $uri);
 
                         //print_r($internalRoute);
-                        //разделяем значения в массиве на  объектs в массиве
+                        //разделяем значения в массиве на  объекты в массиве
                         $segment = explode('/', $internalRoute);
                         //!!!!внимание !!! удаляем первы элемент массива, т.к. все находится в папке "practice"
                         //а это нам не нужно!!!!!!!
@@ -55,7 +55,8 @@
 //                        echo "Контроллер: $controllerName<br>";
 //                        echo "Метод: $actionName<br>"; 
                         $parameters = $segment;
-                        $_GET['parameters'] = $parameters;
+
+                        //$_GET['parameters'] = $parameters;
 //                        echo "<pre>";                     
                         //Подключаем файл-контроллер
                         $controllerFile = ROOT . '/controllers/' . $controllerName . '.php';
