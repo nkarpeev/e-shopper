@@ -19,7 +19,6 @@
         <script src="template/js/jquery.prettyPhoto.js"></script>
         <script src="template/js/main.js"></script>
         <script>
-            /*
             $(document).ready(function(){
                 $(".add-to-cart").click(function () {
                     var id = $(this).attr("data-id");
@@ -29,7 +28,6 @@
                     return false;
                 });
             });
-            */
         </script>
     </body>
 </html>

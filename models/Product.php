@@ -124,25 +124,15 @@
 
         }
 
-        public static function getProductById($idProduct)
+        public static function getProductById($productsIds)
         {
             $db = Db::getConnection();
 
             $productId = array();
             $result = $db->prepare('SELECT * FROM `articles` WHERE id = ?');
-            $result->execute([$idProduct]);
+            $result->execute([$productsIds]);
             $productId = $result->fetch();
 
-            //вариант Длинный!
-            /*
-                while($row = $result->fetch()) {
-                $productId['id'] = $row['id'];
-                $productId['category'] = $row['category'];
-                $productId['title'] = $row['title'];
-                $productId['text'] = $row['text'];
-                $productId['price'] = $row['price'];
-            }
-               */
             return $productId;
 
 

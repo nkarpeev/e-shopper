@@ -32,6 +32,7 @@ class Cart
         // Записываем массив с товарами в сессию
         $_SESSION['products'] = $productsInCart;
         // Возвращаем количество товаров в корзине
+        //print_r($_SESSION['products']);
         return self::countItems();
     }
     /**

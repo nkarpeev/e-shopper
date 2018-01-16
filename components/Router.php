@@ -52,8 +52,8 @@
                         
                         $actionName = 'action' . ucfirst(array_shift($segment));
        
-//                        echo "Контроллер: $controllerName<br>";
-//                        echo "Метод: $actionName<br>"; 
+                        //echo "Контроллер: $controllerName<br>";
+                        //echo "Метод: $actionName<br>";
                         $parameters = $segment;
 
                         //$_GET['parameters'] = $parameters;
