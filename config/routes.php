@@ -16,6 +16,7 @@ return array(
     'user/logout'                     => '/user/logout',
     'cart'                            => '/cart/index',
     'cart/add/([0-9]+)'               => '/cart/add/$1',
+    'cart/delete/([0-9]+)'            => '/cart/delete/$1',
     'cabinet'                         => '/cabinet/index',
     'cabinet/edit'                    => '/cabinet/edit',
     ''                                => '/site/index'

@@ -61,7 +61,7 @@
                         <div class="col-sm-8">
                             <div class="shop-menu pull-right">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="/cart"><i class="fa fa-shopping-cart"></i> Корзина <span id="cart-count">(<?php echo Cart::countItems() ?>)</span></a></li>
+                                    <li><a href="/cart"><i class="fa fa-shopping-cart"></i> Корзина (<span id="cart-count"><?php echo Cart::countItems() ?></span>)</a></li>
                                     <?php if(User::isGuest()) : ?>
                                         <li><a href="/user/login"><i class="fa fa-lock"></i> Вход</a></li>
                                     <?php else : ?>

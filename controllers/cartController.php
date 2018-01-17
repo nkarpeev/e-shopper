@@ -33,7 +33,7 @@ class CartController
     public function actionIndex()
     {
         // Список категорий для левого меню
-        $categories = Category::getCategoriesList();
+        $categoryList = Category::getCategory();
         // Получим идентификаторы и количество товаров в корзине
         $productsInCart = Cart::getProducts();
         if ($productsInCart) {
@@ -46,7 +46,7 @@ class CartController
             $totalPrice = Cart::getTotalPrice($products);
         }
         // Подключаем вид
-        require_once(ROOT . '/views/cart/index.php');
+        require_once(ROOT . '/view/cart/index.php');
         return true;
     }
     /**

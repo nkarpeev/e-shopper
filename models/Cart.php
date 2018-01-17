@@ -51,8 +51,7 @@ class Cart
             }
             return $count;
         } else {
-            // Если товаров нет, вернем 0
-            return 0;
+            return;
         }
     }
     /**

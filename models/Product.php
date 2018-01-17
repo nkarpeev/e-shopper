@@ -128,7 +128,6 @@
         {
             $db = Db::getConnection();
 
-            $productId = array();
             $result = $db->prepare('SELECT * FROM `articles` WHERE id = ?');
             $result->execute([$productsIds]);
             $productId = $result->fetch();
@@ -152,6 +151,35 @@
             //$count_page = $total[0]/$limit;
             //return ceil($count_page);
         }
+
+        /**
+         * Возвращает список товаров с указанными индентификторами
+         * @param array $idsArray <p>Массив с идентификаторами</p>
+         * @return array <p>Массив со списком товаров</p>
+         */
+        public static function getProdustsByIds($idsArray)
+        {
+            // Соединение с БД
+            $db = Db::getConnection();
+            // Превращаем массив в строку для формирования условия в запросе
+            $idsString = implode(',', $idsArray);
+            // Текст запроса к БД
+            $sql = "SELECT * FROM `articles` WHERE status='1' AND id IN ($idsString)";
+            $result = $db->query($sql);
+            // Указываем, что хотим получить данные в виде массива
+            $result->setFetchMode(PDO::FETCH_ASSOC);
+            // Получение и возврат результатов
+            $i = 0;
+            $products = array();
+            while ($row = $result->fetch()) {
+                $products[$i]['id'] = $row['id'];
+                $products[$i]['title'] = $row['title'];
+                $products[$i]['price'] = $row['price'];
+                $i++;
+            }
+            return $products;
+        }
+
 
         public static function getTotalProductInCategory($idCategory, $limit = self::DEFAULT_LIMIT)
         {

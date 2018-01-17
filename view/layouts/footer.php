@@ -29,6 +29,19 @@
                 });
             });
         </script>
+
+        <script>
+            /*
+            $(document).ready(function(){
+                $(".delete-of-cart").click(function () {
+                    var id = $(this).attr("data-id");
+                    $.post("/delete/add/"+id, {}, function (data) {
+                    });
+                    return false;
+                });
+            });
+            */
+        </script>
     </body>
 </html>
 
