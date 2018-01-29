@@ -28,9 +28,6 @@ class AdminProductController extends AdminBase
      */
     public function actionCreate()
     {
-        // Проверка доступа
-        self::checkAdmin();
-
         // Получаем список категорий для выпадающего списка
         $categoriesList = Category::getCategoriesListAdmin();
 
@@ -84,9 +81,6 @@ class AdminProductController extends AdminBase
      */
     public function actionUpdate($id)
     {
-        // Проверка доступа
-        self::checkAdmin();
-
         // Получаем список категорий для выпадающего списка
         $categoriesList = Category::getCategoriesListAdmin();
 
@@ -133,9 +127,6 @@ class AdminProductController extends AdminBase
      */
     public function actionDelete($id)
     {
-        // Проверка доступа
-        self::checkAdmin();
-
         // Обработка формы
         if (isset($_POST['submit'])) {
             // Если форма отправлена

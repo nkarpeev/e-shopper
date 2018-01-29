@@ -28,9 +28,6 @@ class AdminCategoryController extends AdminBase
      */
     public function actionCreate()
     {
-        // Проверка доступа
-        self::checkAdmin();
-
         // Обработка формы
         if (isset($_POST['submit'])) {
             // Если форма отправлена
@@ -69,9 +66,6 @@ class AdminCategoryController extends AdminBase
      */
     public function actionUpdate($id)
     {
-        // Проверка доступа
-        self::checkAdmin();
-
         // Получаем данные о конкретной категории
         $category = Category::getCategoryById($id);
 
@@ -100,9 +94,6 @@ class AdminCategoryController extends AdminBase
      */
     public function actionDelete($id)
     {
-        // Проверка доступа
-        self::checkAdmin();
-
         // Обработка формы
         if (isset($_POST['submit'])) {
             // Если форма отправлена

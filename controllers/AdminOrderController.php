@@ -6,7 +6,6 @@
  */
 class AdminOrderController extends AdminBase
 {
-
     /**
      * Action для страницы "Управление заказами"
      */
@@ -28,9 +27,6 @@ class AdminOrderController extends AdminBase
      */
     public function actionUpdate($id)
     {
-        // Проверка доступа
-        self::checkAdmin();
-
         // Получаем данные о конкретном заказе
         $order = Order::getOrderById($id);
 
@@ -61,9 +57,6 @@ class AdminOrderController extends AdminBase
      */
     public function actionView($id)
     {
-        // Проверка доступа
-        self::checkAdmin();
-
         // Получаем данные о конкретном заказе
         $order = Order::getOrderById($id);
 
@@ -86,9 +79,6 @@ class AdminOrderController extends AdminBase
      */
     public function actionDelete($id)
     {
-        // Проверка доступа
-        self::checkAdmin();
-
         // Обработка формы
         if (isset($_POST['submit'])) {
             // Если форма отправлена
