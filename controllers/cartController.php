@@ -17,7 +17,19 @@ class CartController
     }
 
     /**
-     * Action для добавления товара в корзину синхронным запросом
+     * Action для удаления стека товаров в корзине
+     * @param integer $id <p>id товара</p>
+     */
+    public function actionDeleteAll($id)
+    {
+        // Удаляем заданный товар из корзины
+        Cart::deleteProductAll($id);
+        // Возвращаем пользователя в корзину
+        header("Location: /cart");
+    }
+
+    /**
+     * Action для удаления стека товаров в корзине
      * @param integer $id <p>id товара</p>
      */
     public function actionDelete($id)
@@ -27,6 +39,7 @@ class CartController
         // Возвращаем пользователя в корзину
         header("Location: /cart");
     }
+
     /**
      * Action для страницы "Корзина"
      */
@@ -36,6 +49,7 @@ class CartController
         $categoryList = Category::getCategory();
         // Получим идентификаторы и количество товаров в корзине
         $productsInCart = Cart::getProducts();
+
         if ($productsInCart) {
             // Если в корзине есть товары, получаем полную информацию о товарах для списка
             // Получаем массив только с идентификаторами товаров
@@ -49,6 +63,7 @@ class CartController
         require_once(ROOT . '/view/cart/index.php');
         return true;
     }
+
     /**
      * Action для страницы "Оформление покупки"
      */
@@ -61,7 +76,7 @@ class CartController
             header("Location: /");
         }
         // Список категорий для левого меню
-        $categories = Category::getCategoriesList();
+        $categories = Category::getCategory();
         // Находим общую стоимость
         $productsIds = array_keys($productsInCart);
         $products = Product::getProdustsByIds($productsIds);
@@ -108,7 +123,7 @@ class CartController
                 if ($result) {
                     // Если заказ успешно сохранен
                     // Оповещаем администратора о новом заказе по почте
-                    $adminEmail = 'php.start@mail.ru';
+                    $adminEmail = 'nekarpeev@yandex.ru';
                     $message = '<a href="http://digital-mafia.net/admin/orders">Список заказов</a>';
                     $subject = 'Новый заказ!';
                     mail($adminEmail, $subject, $message);
@@ -118,7 +133,7 @@ class CartController
             }
         }
         // Подключаем вид
-        require_once(ROOT . '/views/cart/checkout.php');
+        require_once(ROOT . '/view/cart/checkout.php');
         return true;
     }
 }

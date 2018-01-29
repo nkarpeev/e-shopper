@@ -15,7 +15,8 @@
                                     <th>Название</th>
                                     <th>Стомость, руб.</th>
                                     <th>Количество, шт</th>
-                                    <th>Удалить</th>
+                                    <th>Удалить 1 шт.</th>
+                                    <th>Удалить все</th>
                                 </tr>
                                 <?php foreach ($products as $product): ?>
                                     <tr>
@@ -28,6 +29,11 @@
                                         <td><?php echo $productsInCart[$product['id']];?></td>
                                         <td>
                                             <a class="delete-of-cart" data-id="<?php echo $product['id'];?>" href="/cart/delete/<?php echo $product['id'];?>">
+                                                <i class="fa fa-times"></i>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a class="delete-of-cart" data-id="<?php echo $product['id'];?>" href="/cart/deleteAll/<?php echo $product['id'];?>">
                                                 <i class="fa fa-times"></i>
                                             </a>
                                         </td>

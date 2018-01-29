@@ -49,7 +49,7 @@ class Cart
             foreach ($_SESSION['products'] as $id => $quantity) {
                 $count = $count + $quantity;
             }
-            return $count;
+            return '(' . $count . ')';
         } else {
             return;
         }
@@ -100,7 +100,7 @@ class Cart
      * Удаляет товар с указанным id из корзины
      * @param integer $id <p>id товара</p>
      */
-    public static function deleteProduct($id)
+    public static function deleteProductAll($id)
     {
         // Получаем массив с идентификаторами и количеством товаров в корзине
         $productsInCart = self::getProducts();
@@ -108,5 +108,22 @@ class Cart
         unset($productsInCart[$id]);
         // Записываем массив товаров с удаленным элементом в сессию
         $_SESSION['products'] = $productsInCart;
+    }
+
+    public static function deleteProduct($id)
+    {
+        // Получаем массив с идентификаторами и количеством товаров в корзине
+        $productsInCart = self::getProducts();
+        // Удаляем из массива элемент с указанным id
+        $productsInCart[$id] = --$productsInCart[$id];
+
+        if($productsInCart[$id] == 0) {
+            unset($productsInCart[$id]);
+            $_SESSION['products'] = $productsInCart;
+        }
+        else {
+            // Записываем массив товаров с удаленным элементом в сессию
+            $_SESSION['products'][$id] = $productsInCart[$id];
+        }
     }
 }
