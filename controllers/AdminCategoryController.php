@@ -12,9 +12,6 @@ class AdminCategoryController extends AdminBase
      */
     public function actionIndex()
     {
-        // Проверка доступа
-        self::checkAdmin();
-
         // Получаем список категорий
         $categoriesList = Category::getCategoriesListAdmin();
 

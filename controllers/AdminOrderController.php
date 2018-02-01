@@ -11,8 +11,6 @@ class AdminOrderController extends AdminBase
      */
     public function actionIndex()
     {
-        // Проверка доступа
-        self::checkAdmin();
 
         // Получаем список заказов
         $ordersList = Order::getOrdersList();

@@ -12,9 +12,6 @@ class AdminProductController extends AdminBase
      */
     public function actionIndex()
     {
-        // Проверка доступа
-        self::checkAdmin();
-
         // Получаем список товаров
         $productsList = Product::getProductList(1, 15);
 
